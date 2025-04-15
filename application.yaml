@@ -4,9 +4,11 @@ metadata:
   name: go-simple-webserver
   namespace: argocd
 spec:
+  syncPolicy:
+    automated: {}
   project: default
   source:
-    repoURL: https://github.com/<todo-add-your-github-username>/ci_cd_lab.git
+    repoURL: https://github.com/lucianpandelica/ci_cd_lab.git
     targetRevision: HEAD
     path: manifests
   destination:
