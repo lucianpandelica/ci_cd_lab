@@ -10,7 +10,9 @@ spec:
     canary:
       steps:
         - setWeight: 50
-        - pause: { duration: 60s }
+        - pause: { duration: 120s }
+        - setWeight: 75
+        - pause: { duration: 120s }
         - setWeight: 100
   selector:
     matchLabels:
@@ -22,8 +24,8 @@ spec:
     spec:
       containers:
         - name: webserver
-          image: ghcr.io/lucianpandelica/ci_cd_lab@sha256:dbdb1f9ace49798fd34f0974a00d468ffa6560e66b3e8e3695cd2652d5994137
-          # image: ghcr.io/lucianpandelica/ci_cd_lab:latest
+          # image: ghcr.io/lucianpandelica/ci_cd_lab@sha256:dbdb1f9ace49798fd34f0974a00d468ffa6560e66b3e8e3695cd2652d5994137
+          image: ghcr.io/lucianpandelica/ci_cd_lab:latest
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
